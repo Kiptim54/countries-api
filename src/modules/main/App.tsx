@@ -1,39 +1,24 @@
 import React from 'react';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider, makeStyles, useTheme } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { useHistory } from 'react-router-dom';
 
 //components
-import Navbar from 'src/components/navbar';
-import { Grid } from '@material-ui/core';
-import Filters from 'src/modules/main/Filters';
+import Navbar from 'src/components/Navbar';
+import Filters from 'src/components/Filters';
+import Card from 'src/components/Card';
 
 const App = (): JSX.Element => {
-    const customTheme = createMuiTheme({
-        spacing: 0,
-        palette: {},
-    });
-
-    const theme = useTheme();
-    console.log(theme);
-    const styles = makeStyles({
-        root: {},
-    });
-
-    const classes = styles();
-
+    const history = useHistory();
     return (
-        <CssBaseline>
-            <ThemeProvider theme={customTheme}>
-                <Grid container className={classes.root}>
-                    <Navbar />
-                    <Filters />
-                    <Grid container>
-                        <div>This is app.tsx</div>
-                    </Grid>
-                </Grid>
-            </ThemeProvider>
-        </CssBaseline>
+        <div className="h-screen bg-lightGray-100">
+            <Navbar />
+            <Filters />
+            <div className="x-content-padding p-8 grid grid-cols-4 gap-10">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </div>
     );
 };
 export default App;
