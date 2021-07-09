@@ -2,7 +2,7 @@
     "name": "countries-api",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://kiptim54.github.io/countries-api",
+    "homepage": "https://countries.chessifarms.com",
     "dependencies": {
         "-": "^0.0.1",
         "@craco/craco": "^6.2.0",
