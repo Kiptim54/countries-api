@@ -8,8 +8,8 @@ interface ICardsProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLD
 const Card = (props: ICardsProps): JSX.Element => {
     const { customClasses, ...rest } = props;
     return (
-        <div className={`rounded shadow-lg bg-white h-full ${customClasses}`} {...rest}>
-            <div className="w-full h-60 overflow-hidden">
+        <div className={`rounded-md shadow-lg bg-white h-full overflow-hidden ${customClasses}`} {...rest}>
+            <div className=" w-full h-60 overflow-hidden">
                 <img style={{ objectFit: 'cover' }} className="w-full" src={Kenya} />
             </div>
             <div className="p-4">
