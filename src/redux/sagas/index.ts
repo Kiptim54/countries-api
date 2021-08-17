@@ -1,8 +1,9 @@
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, takeEvery } from 'redux-saga/effects';
 
-import { FETCHCOUNTRIES } from 'src/redux/actions/index';
-import { fetchCountries } from 'src/api';
+import { FETCHCOUNTRIES, fetch_countries } from 'src/redux/actions/index';
+import { fetchAllCountries } from './countries';
 
 export function* mySagas(): Generator {
-    takeLatest(FETCHCOUNTRIES, fetchCountries);
+    console.log('general saga runnig');
+    yield takeLatest(FETCHCOUNTRIES, fetchAllCountries);
 }

@@ -22,7 +22,7 @@ const countriesReducer = (state: ICountriesReducer = defaultState, action: AnyAc
             console.log('success called');
             return {
                 ...state,
-                isFetching: true,
+                isFetching: false,
                 error: undefined,
                 countries: action.payload as ICountries[],
             };
@@ -31,7 +31,7 @@ const countriesReducer = (state: ICountriesReducer = defaultState, action: AnyAc
             console.log('return error');
             return {
                 ...state,
-                isFetching: true,
+                isFetching: false,
                 error: action.payload as IError,
             };
 

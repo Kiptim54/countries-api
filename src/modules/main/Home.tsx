@@ -1,4 +1,4 @@
-import React from 'react-icons';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetch_countries } from 'src/redux/actions';
 
@@ -7,22 +7,29 @@ import { ICountries, IStoreState } from 'src/redux/types';
 import { useEffect } from 'react';
 
 const Home = (): JSX.Element => {
+    // const [isLoading, setIsLoading] = useState<boolean>(false);
     const dispatch = useDispatch();
-    dispatch(fetch_countries());
 
     const countries: ICountries[] = useSelector((store: IStoreState) => {
         return store.countries.countries;
     });
+    const isLoading: boolean = useSelector((store: IStoreState) => {
+        return store.countries.isFetching;
+    });
 
     useEffect(() => {
+        dispatch(fetch_countries());
+
         console.log('ipdating countries', countries);
-    }, [countries]);
+    }, []);
     return (
-        <div>
-            {countries.map((country: ICountries) => {
-                return <Card key={country.capital} />;
-            })}
-        </div>
+        <>
+            {isLoading
+                ? 'isLoading'
+                : countries.map((country: ICountries, index) => {
+                      return <Card key={index} country={country} />;
+                  })}
+        </>
     );
 };
 export default Home;

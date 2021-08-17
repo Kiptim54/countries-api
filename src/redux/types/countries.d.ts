@@ -8,6 +8,7 @@ interface ICountries {
     borders: Array<string>;
     currencies: Array<ICurrencies>;
     languages: Array<ITranslations>;
+    flag: string;
 }
 
 interface ICurrencies {
