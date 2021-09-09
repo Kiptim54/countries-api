@@ -1,71 +1,92 @@
 {
-    "name": "countries-api",
-    "version": "0.1.0",
-    "private": true,
-    "homepage": "https://countries.chessifarms.com",
-    "dependencies": {
-        "-": "^0.0.1",
-        "@craco/craco": "^6.2.0",
-        "@testing-library/jest-dom": "^5.11.4",
-        "@testing-library/react": "^11.1.0",
-        "@testing-library/user-event": "^12.1.10",
-        "@types/jest": "^26.0.15",
-        "@types/node": "^12.0.0",
-        "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0",
-        "@types/react-redux": "^7.1.18",
-        "@types/react-router-dom": "^5.1.8",
-        "axios": "^0.21.1",
-        "express": "^4.17.1",
-        "path": "^0.12.7",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-redux": "^7.2.4",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "4.0.3",
-        "redux": "^4.1.0",
-        "redux-devtools-extension": "^2.13.9",
-        "redux-saga": "^1.1.3",
-        "sass": "^1.35.2",
-        "typescript": "^4.1.2",
-        "web-vitals": "^1.0.1"
-    },
-    "scripts": {
-        "dev": "craco start",
-        "build": "CI= craco build",
-        "test": "craco test",
-        "eject": "react-scripts eject",
-        "start": "node server.js"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
+  "name": "countries-api",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://countries.chessifarms.com",
+  "dependencies": {
+    "-": "^0.0.1",
+    "@craco/craco": "^6.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.18",
+    "@types/react-router-dom": "^5.1.8",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-lazyload": "^3.2.0",
+    "react-loading-skeleton": "^2.2.0",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-saga": "^1.1.3",
+    "sass": "^1.35.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "dev": "craco start",
+    "build": "CI= craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "start": "node server.js",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
         ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^4.22.0",
-        "@typescript-eslint/parser": "^4.22.0",
-        "autoprefixer": "^9",
-        "eslint": "^7.25.0",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-prettier": "^3.4.0",
-        "eslint-plugin-react": "^7.23.2",
-        "postcss": "^7",
-        "prettier": "^2.2.1",
-        "react-icons": "^4.2.0",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
-    }
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/node-logger": "^6.3.7",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.7",
+    "@types/react-lazyload": "^3.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^9",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "postcss": "^7",
+    "prettier": "^2.2.1",
+    "react-icons": "^4.2.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
+  }
 }
